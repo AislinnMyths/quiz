@@ -235,42 +235,54 @@ export default function Quiz({ category, onFinish, score, setScore }) {
 
   return (
     <>
-      <section id="questionBox">
-        <h3 className="questions">{currentQuestion.question}</h3>
-        <label>Choose an answer:</label>
-        {currentQuestion.answers.map((textAnswer, index) => (
-          <div
-            key={index}
-            className={
-              selectedAnswer === currentQuestion.correct
-                ? ""
-                : textAnswer === currentQuestion.correct
-                  ? "correct"
-                  : textAnswer === selectedAnswer
-                    ? "wrong"
-                    : ""
-            }
-          >
-            <input
-              type="radio"
-              className="radioAnswer"
-              id={index}
-              name="radioGroup"
-              value={textAnswer}
-              onChange={(e) => setSelectedAnswer(e.target.value)}
-              disabled={selectedAnswer !== null}
-              checked={selectedAnswer === textAnswer}
-            />
-            <label htmlFor={index}>{textAnswer}</label>
-          </div>
-        ))}
-        {selectedAnswer &&
-          (selectedAnswer === currentQuestion.correct ? (
-            <CheckCircle />
-          ) : (
-            <XCircle />
+      <section
+        id="questionBox"
+        className="bg-purple-dark w-full rounded-2xl p-8 max-w-4xl mx-auto mt-16"
+      >
+        <h3 className="questions text-2xl font-semibold text-mint mb-6">
+          {currentQuestion.question}
+        </h3>
+
+        <div className="flex flex-col gap-2">
+          {currentQuestion.answers.map((textAnswer, index) => (
+            <div
+              key={index}
+              className={`flex items-center gap-2 w-fit ${
+                selectedAnswer === currentQuestion.correct
+                  ? ""
+                  : textAnswer === currentQuestion.correct &&
+                      selectedAnswer !== null
+                    ? "bg-mint-dark/40 text-dark rounded-xl px-2 py-1"
+                    : textAnswer === selectedAnswer
+                      ? "bg-mauve/60 text-dark rounded-xl px-2 py-1"
+                      : ""
+              }`}
+            >
+              <input
+                type="radio"
+                className="appearance-none w-4 h-4 rounded-full border-2 border-mint checked:bg-mint cursor-pointer"
+                id={index}
+                name="radioGroup"
+                value={textAnswer}
+                onChange={(e) => setSelectedAnswer(e.target.value)}
+                disabled={selectedAnswer !== null}
+                checked={selectedAnswer === textAnswer}
+              />
+              <label htmlFor={index} className="text-lg text-mint">
+                {textAnswer}
+              </label>
+              {textAnswer === selectedAnswer &&
+                selectedAnswer !== currentQuestion.correct && <XCircle />}
+              {textAnswer === currentQuestion.correct &&
+                selectedAnswer !== null && <CheckCircle />}
+            </div>
           ))}
-        <button className="btnNext" onClick={handleNext}>
+        </div>
+
+        <button
+          className="bg-mint-dark text-dark font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:brightness-110 transition-all duration-200 cursor-pointer mt-6 ml-auto block"
+          onClick={handleNext}
+        >
           Next question
         </button>
       </section>

@@ -1,0 +1,42 @@
+.stack {
+  position: relative;
+  width: 180px;
+  height: 240px;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 240px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+.c1 {
+  background: linear-gradient(135deg, #553555, #755b69);
+  transform: rotate(-6deg);
+  z-index: 1;
+}
+
+.c2 {
+  background: linear-gradient(135deg, #755b69, #96c5b0);
+  transform: rotate(0 deg);
+  z-index: 2;
+}
+.c3 {
+  background: linear-gradient(135deg, #96c5b0, #adf1d2);
+  transform: rotate(6deg);
+  z-index: 3;
+}
+
+.stack:hover .c1 {
+  transform: translate(-90 px, -30px) rotate(-18px);
+}
+.stack:hover .c2 {
+  transform: translate(0 px, -55px) rotate(0 px);
+}
+.stack:hover .c3 {
+  transform: translate(90 px, -30px) rotate(18px);
+}

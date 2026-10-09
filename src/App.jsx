@@ -14,7 +14,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="bg-dark text-mint px-8 min-h-screen flex items-center justify-center">
       {view === "home" && <Categories onSelect={handleSelect} />}
       {view === "quiz" && (
         <Quiz
