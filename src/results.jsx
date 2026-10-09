@@ -14,12 +14,12 @@ export default function Results({ score, onSelect, category }) {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen py-24">
+    <div className="flex flex-col items-center min-h-screen justify-around pb-90">
       <p className="text-mint text-3xl font-bold">
         you got {percentage}% correct{" "}
       </p>
 
-      <div className="stack mt-60">
+      <div className="stack mb-12">
         {otherCathegories.map((cat) => (
           <div
             key={cat}

@@ -4,12 +4,12 @@ export default function Categories({ onSelect, category }) {
   return (
     <>
       <section
-        className="topSection flex flex-col items-center justify-center min-h-screen"
+        className="topSection flex flex-col items-center justify-around min-h-screen pb-110"
         id="top"
       >
         <div className="hero"></div>
         <div>
-          <h1>Quizzes</h1>
+          <h1 className="text-mint text-6xl font-bold mb-20">Quizzes</h1>
         </div>
 
         <div className="stack">
