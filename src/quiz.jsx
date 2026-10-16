@@ -30,7 +30,7 @@ export default function Quiz({ category, onFinish, score, setScore }) {
         id: 3,
         question:
           "In 'Back to the Future', what speed does the DeLorean need to reach to travel through time?",
-        answers: ["120 kmh", "142 kmh", "160 kmh", "200 kmh"],
+        answers: ["142 kmh", "120 kmh", "160 kmh", "200 kmh"],
         correct: "142 kmh",
       },
       {
@@ -55,7 +55,7 @@ export default function Quiz({ category, onFinish, score, setScore }) {
       {
         id: 7,
         question: "What is the name of the spaceship in 'Interstellar'?",
-        answers: ["Ranger", "Lazarus", "Odyssey", "Endurance"],
+        answers: ["Endurance", "Ranger", "Lazarus", "Odyssey"],
         correct: "Endurance",
       },
       {
@@ -107,7 +107,7 @@ export default function Quiz({ category, onFinish, score, setScore }) {
       {
         id: 4,
         question: "In 'The Hobbit', what is the name of the dragon?",
-        answers: ["Fafnir", "Smaug", "Ancalagon", "Glaurung"],
+        answers: ["Fafnir", "Ancalagon", "Glaurung", "Smaug"],
         correct: "Smaug",
       },
       {
@@ -127,7 +127,7 @@ export default function Quiz({ category, onFinish, score, setScore }) {
         id: 7,
         question:
           "In Norse mythology, what is the name of the rainbow bridge that connects Asgard to Midgard?",
-        answers: ["Yggdrasil", "Valhalla", "Asgard", "Bifröst"],
+        answers: ["Yggdrasil", "Bifröst", "Valhalla", "Asgard"],
         correct: "Bifröst",
       },
       {
@@ -147,7 +147,7 @@ export default function Quiz({ category, onFinish, score, setScore }) {
         id: 10,
         question:
           "Which creature in Greek mythology has the head of a bull and the body of a man? ",
-        answers: ["Centaur", "Minotaur", "Cyclops", "Satyr"],
+        answers: ["Centaur", "Cyclops", "Minotaur", "Satyr"],
         correct: "Minotaur",
       },
     ],
@@ -156,7 +156,7 @@ export default function Quiz({ category, onFinish, score, setScore }) {
         id: 1,
         question:
           "What is the name of the protagonist in the Legend of Zelda series?",
-        answers: ["Zelda", "Sheik", "Link", "Ganon"],
+        answers: ["Zelda", "Link", "Sheik", "Ganon"],
         correct: "Link",
       },
       {
@@ -168,26 +168,26 @@ export default function Quiz({ category, onFinish, score, setScore }) {
       {
         id: 3,
         question: "In what year was the first PlayStation console released?",
-        answers: ["1996", "1992", "1998", "1994"],
+        answers: ["1994", "1996", "1992", "1998"],
         correct: "1994",
       },
       {
         id: 4,
         question: "Which Nintendo character is known as the 'King of Koopas'?",
-        answers: ["Wario", "Kamek", "Bowser", "Donkey Kong"],
+        answers: ["Wario", "Kamek", "Donkey Kong", "Bowser"],
         correct: "Bowser",
       },
       {
         id: 5,
         question:
           "What is the name of the main antagonist in the Final Fantasy VII?",
-        answers: ["Sephiroth", "Kefka", "Jenova", "Rufus"],
+        answers: ["Kefka", "Jenova", "Sephiroth", "Rufus"],
         correct: "Sephiroth",
       },
       {
         id: 6,
         question: "What was the first commercially successful video game?",
-        answers: ["Space invaders", "Tetris", "Pong", "Pac-man"],
+        answers: ["Space invaders", "Pong", "Tetris", "Pac-man"],
         correct: "Pong",
       },
       {
@@ -201,7 +201,7 @@ export default function Quiz({ category, onFinish, score, setScore }) {
         id: 8,
         question:
           "Which classic arcade game features characters named Inky, Blinky, Pinky, and Clyde?",
-        answers: ["Donkey kong", "Galaga", "Space invaders", "Pac-man"],
+        answers: ["Donkey kong", "Galaga", "Pac-man", "Space invaders"],
         correct: "Pac-man",
       },
       {
@@ -213,7 +213,7 @@ export default function Quiz({ category, onFinish, score, setScore }) {
       {
         id: 10,
         question: "What year was the original Super Mario Bros. released?",
-        answers: ["1983", "1987", "1985", "1989"],
+        answers: ["1983", "1987", "1989", "1985"],
         correct: "1985",
       },
     ],

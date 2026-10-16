@@ -19,11 +19,19 @@ export default function Results({ score, onSelect, category }) {
     gamesQA: "Games Quiz",
   };
 
+  const getMessage = () => {
+    if (percentage === 100) return "Perfect!";
+    if (percentage >= 70) return "Well done!";
+    if (percentage >= 40) return "Not bad!";
+    return "Keep practicing!";
+  };
+
   return (
     <div className="flex flex-col items-center min-h-screen justify-around pb-90">
-      <p className="text-mint text-3xl font-bold">
-        you got {percentage}% correct{" "}
+      <p className="text-mint-dark text-3xl font-bold">
+        you got {percentage}% correct
       </p>
+      <p className="text-mint text-4xl font-semibold">{getMessage()}</p>
 
       <div className="stack mb-12">
         {otherCathegories.map((cat) => (
