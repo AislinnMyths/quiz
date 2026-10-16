@@ -237,9 +237,12 @@ export default function Quiz({ category, onFinish, score, setScore }) {
     <>
       <section
         id="questionBox"
-        className="bg-purple-dark w-full rounded-2xl p-8 max-w-4xl mx-auto mt-16"
+        className="bg-purple-dark w-lg rounded-2xl p-8 max-w-4xl mx-auto mt-16"
       >
         <h3 className="questions text-2xl font-semibold text-mint mb-6">
+          <span className="text-mint font-bold text-4xl">
+            {currentQuestion.id}.{" "}
+          </span>{" "}
           {currentQuestion.question}
         </h3>
 
@@ -247,7 +250,7 @@ export default function Quiz({ category, onFinish, score, setScore }) {
           {currentQuestion.answers.map((textAnswer, index) => (
             <div
               key={index}
-              className={`flex items-center gap-2 w-fit ${
+              className={`flex items-center gap-2 w-fit cursor-pointer ${
                 selectedAnswer === currentQuestion.correct
                   ? ""
                   : textAnswer === currentQuestion.correct &&
@@ -268,7 +271,10 @@ export default function Quiz({ category, onFinish, score, setScore }) {
                 disabled={selectedAnswer !== null}
                 checked={selectedAnswer === textAnswer}
               />
-              <label htmlFor={index} className="text-lg text-mint">
+              <label
+                htmlFor={index}
+                className="text-lg text-mint cursor-pointer"
+              >
                 {textAnswer}
               </label>
               {textAnswer === selectedAnswer &&

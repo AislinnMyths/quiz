@@ -32,11 +32,11 @@
 }
 
 .stack:hover .c1 {
-  transform: translate(-90 px, -30px) rotate(-18px);
+  transform: translate(-90px, -30px) rotate(-18deg);
 }
 .stack:hover .c2 {
-  transform: translate(0 px, -55px) rotate(0 px);
+  transform: translate(0px, -55px) rotate(0deg);
 }
 .stack:hover .c3 {
-  transform: translate(90 px, -30px) rotate(18px);
+  transform: translate(90px, -30px) rotate(18deg);
 }

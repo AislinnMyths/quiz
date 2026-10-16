@@ -14,19 +14,19 @@ export default function Categories({ onSelect, category }) {
 
         <div className="stack">
           <div
-            className="card c1 flex items-center justify-center text-white font-bold"
+            className="card c1 flex items-center justify-center text-white text-center whitespace-pre-line  font-bold"
             onClick={() => onSelect("scifiQA")}
           >
             Sci-fi Quiz
           </div>
           <div
-            className="card c2 flex items-center justify-center text-white font-bold"
+            className="card c2 flex items-center justify-center text-white text-center whitespace-pre-line  font-bold"
             onClick={() => onSelect("fantasyMythsQA")}
           >
             Fantasy & Myths Quiz
           </div>
           <div
-            className="card c3 flex items-center justify-center text-white font-bold"
+            className="card c3 flex items-center justify-center text-white text-center whitespace-pre-line  font-bold"
             onClick={() => onSelect("gamesQA")}
           >
             Games Quiz

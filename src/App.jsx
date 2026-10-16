@@ -9,6 +9,7 @@ function App() {
   const [score, setScore] = useState(0);
 
   function handleSelect(category) {
+    setScore(0);
     setCategory(category);
     setView("quiz");
   }

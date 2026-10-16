@@ -13,6 +13,12 @@ export default function Results({ score, onSelect, category }) {
     gamesQA: "c3",
   };
 
+  const categoryNames = {
+    scifiQA: "Sci-fi Quiz",
+    fantasyMythsQA: "Fantasy & myths Quiz",
+    gamesQA: "Games Quiz",
+  };
+
   return (
     <div className="flex flex-col items-center min-h-screen justify-around pb-90">
       <p className="text-mint text-3xl font-bold">
@@ -23,10 +29,10 @@ export default function Results({ score, onSelect, category }) {
         {otherCathegories.map((cat) => (
           <div
             key={cat}
-            className={`card ${cardStyles[cat]}`}
+            className={`card flex items-center justify-center text-white text-center whitespace-pre-line font-bold ${cardStyles[cat]}`}
             onClick={() => onSelect(cat)}
           >
-            {cat}
+            {categoryNames[cat]}
           </div>
         ))}
       </div>
