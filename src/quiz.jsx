@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CheckCircle, XCircle } from "lucide-react";
 
-export default function Quiz({ category, onFinish, score, setScore }) {
+export default function Quiz({ category, onFinish, score, setScore, onHome }) {
   const [questionId, setQuestionId] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
@@ -235,6 +235,13 @@ export default function Quiz({ category, onFinish, score, setScore }) {
 
   return (
     <>
+      <button
+        onClick={onHome}
+        className="fixed top-6 right-6 bg-mint-dark text-dark font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:brightness-110 transition-all duration-200 cursor-pointer"
+      >
+        Quit
+      </button>
+
       <section
         id="questionBox"
         className="bg-purple-dark w-lg rounded-2xl p-8 max-w-4xl mx-auto mt-16"
@@ -289,7 +296,7 @@ export default function Quiz({ category, onFinish, score, setScore }) {
           className="bg-mint-dark text-dark font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:brightness-110 transition-all duration-200 cursor-pointer mt-6 ml-auto block"
           onClick={handleNext}
         >
-          Next question
+          Next Question
         </button>
       </section>
     </>

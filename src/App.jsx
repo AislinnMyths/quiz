@@ -13,6 +13,11 @@ function App() {
     setCategory(category);
     setView("quiz");
   }
+  function handleHome() {
+    setScore(0);
+    setCategory(null);
+    setView("home");
+  }
 
   return (
     <div className="bg-dark text-mint px-8 min-h-screen flex items-center justify-center">
@@ -23,10 +28,16 @@ function App() {
           onFinish={setView}
           score={score}
           setScore={setScore}
+          onHome={handleHome}
         />
       )}
       {view === "results" && (
-        <Results score={score} onSelect={handleSelect} category={category} />
+        <Results
+          score={score}
+          onSelect={handleSelect}
+          category={category}
+          onHome={handleHome}
+        />
       )}
     </div>
   );

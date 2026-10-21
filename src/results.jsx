@@ -1,6 +1,6 @@
 import "./home.css";
 
-export default function Results({ score, onSelect, category }) {
+export default function Results({ score, onSelect, category, onHome }) {
   const percentage = (score / 10) * 100;
   const allCategories = ["scifiQA", "fantasyMythsQA", "gamesQA"];
   const otherCathegories = allCategories.filter(
@@ -43,6 +43,15 @@ export default function Results({ score, onSelect, category }) {
             {categoryNames[cat]}
           </div>
         ))}
+      </div>
+
+      <div>
+        <button
+          onClick={onHome}
+          className="bg-mint-dark text-dark font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:brightness-110 transition-all duration-200 cursor-pointer mt-6 ml-auto block"
+        >
+          Back to home
+        </button>
       </div>
     </div>
   );
