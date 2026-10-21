@@ -33,7 +33,7 @@ export default function Results({ score, onSelect, category, onHome }) {
       </p>
       <p className="text-mint text-4xl font-semibold">{getMessage()}</p>
 
-      <div className="stack mb-12">
+      <div className="stack mt-12 mb-12">
         {otherCathegories.map((cat) => (
           <div
             key={cat}
