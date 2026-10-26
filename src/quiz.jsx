@@ -1,13 +1,10 @@
 import { useState } from "react";
 import { CheckCircle, XCircle } from "lucide-react";
-import { categories } from "./quizData";
 
-export default function Quiz({ category, onFinish, score, setScore, onHome }) {
+export default function Quiz({ questions, onFinish, score, setScore, onHome }) {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-  const currentCategory = categories.find((catFind) => catFind.id === category);
-  const questions = currentCategory.questions;
   const currentQuestion = questions[questionIndex];
 
   function handleNext() {
