@@ -1,7 +1,13 @@
 import "./home.css";
 
-export default function Results({ score, onSelect, category, onHome }) {
-  const percentage = (score / 10) * 100;
+export default function Results({
+  score,
+  onSelect,
+  category,
+  onHome,
+  questions,
+}) {
+  const percentage = (score / questions.length) * 100;
   const allCategories = ["scifiQA", "fantasyMythsQA", "gamesQA"];
   const otherCathegories = allCategories.filter(
     (catFilter) => catFilter !== category,
