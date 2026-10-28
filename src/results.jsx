@@ -1,4 +1,5 @@
 import "./home.css";
+import { categories } from "./quizData";
 
 export default function Results({
   score,
@@ -8,22 +9,9 @@ export default function Results({
   questions,
 }) {
   const percentage = (score / questions.length) * 100;
-  const allCategories = ["scifiQA", "fantasyMythsQA", "gamesQA"];
-  const otherCathegories = allCategories.filter(
-    (catFilter) => catFilter !== category,
+  const otherCategories = categories.filter(
+    (catFilter) => catFilter.id !== category,
   );
-
-  const cardStyles = {
-    scifiQA: "c1",
-    fantasyMythsQA: "c2",
-    gamesQA: "c3",
-  };
-
-  const categoryNames = {
-    scifiQA: "Sci-fi Quiz",
-    fantasyMythsQA: "Fantasy & myths Quiz",
-    gamesQA: "Games Quiz",
-  };
 
   const getMessage = () => {
     if (percentage === 100) return "Perfect!";
@@ -40,13 +28,13 @@ export default function Results({
       <p className="text-mint text-4xl font-semibold">{getMessage()}</p>
 
       <div className="stack mt-12 mb-12">
-        {otherCathegories.map((cat) => (
+        {otherCategories.map((cat) => (
           <div
-            key={cat}
-            className={`card flex items-center justify-center text-white text-center whitespace-pre-line font-bold ${cardStyles[cat]}`}
-            onClick={() => onSelect(cat)}
+            key={cat.id}
+            className={`card flex items-center justify-center text-white text-center whitespace-pre-line font-bold ${cat.cardClass}`}
+            onClick={() => onSelect(cat.id)}
           >
-            {categoryNames[cat]}
+            {cat.name}
           </div>
         ))}
       </div>
