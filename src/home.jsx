@@ -1,38 +1,24 @@
 import "./home.css";
+import { categories } from "./quizData";
 
-export default function Categories({ onSelect, category }) {
+export default function Categories({ onSelect }) {
   return (
-    <>
-      <section
-        className="topSection flex flex-col items-center justify-around min-h-screen pb-110"
-        id="top"
-      >
-        <div className="hero"></div>
-        <div>
-          <h1 className="text-mint text-6xl font-bold mb-20">Quizzes</h1>
-        </div>
+    <section className=" flex flex-col items-center justify-around min-h-screen pb-110">
+      <div>
+        <h1 className="text-mint text-6xl font-bold mb-20">Quizzes</h1>
+      </div>
 
-        <div className="stack">
+      <div className="stack">
+        {categories.map((cat) => (
           <div
-            className="card c1 flex items-center justify-center text-white text-center whitespace-pre-line  font-bold"
-            onClick={() => onSelect("scifiQA")}
+            key={cat.id}
+            className={`card flex items-center justify-center text-white text-center whitespace-pre-line font-bold ${cat.cardClass}`}
+            onClick={() => onSelect(cat.id)}
           >
-            Sci-fi Quiz
+            {cat.name}
           </div>
-          <div
-            className="card c2 flex items-center justify-center text-white text-center whitespace-pre-line  font-bold"
-            onClick={() => onSelect("fantasyMythsQA")}
-          >
-            Fantasy & Myths Quiz
-          </div>
-          <div
-            className="card c3 flex items-center justify-center text-white text-center whitespace-pre-line  font-bold"
-            onClick={() => onSelect("gamesQA")}
-          >
-            Games Quiz
-          </div>
-        </div>
-      </section>
-    </>
+        ))}
+      </div>
+    </section>
   );
 }
