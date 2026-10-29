@@ -1,5 +1,5 @@
-import "./home.css";
 import { categories } from "./quizData";
+import CategoryCard from "./categoryCard";
 
 export default function Categories({ onSelect }) {
   return (
@@ -10,13 +10,7 @@ export default function Categories({ onSelect }) {
 
       <div className="stack">
         {categories.map((cat) => (
-          <div
-            key={cat.id}
-            className={`card flex items-center justify-center text-white text-center whitespace-pre-line font-bold ${cat.cardClass}`}
-            onClick={() => onSelect(cat.id)}
-          >
-            {cat.name}
-          </div>
+          <CategoryCard key={cat.id} cat={cat} onSelect={onSelect} />
         ))}
       </div>
     </section>
