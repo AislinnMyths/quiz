@@ -1,5 +1,6 @@
 import { categories } from "./quizData";
 import CategoryCard from "./categoryCard";
+import Button from "./button";
 
 export default function Results({
   score,
@@ -34,12 +35,9 @@ export default function Results({
       </div>
 
       <div>
-        <button
-          onClick={onHome}
-          className="bg-mint-dark text-dark font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:brightness-110 transition-all duration-200 cursor-pointer mt-6 ml-auto block"
-        >
+        <Button onClick={onHome} className="mt-6 ml-auto block">
           Back to home
-        </button>
+        </Button>
       </div>
     </div>
   );
