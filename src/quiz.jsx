@@ -19,6 +19,16 @@ export default function Quiz({ questions, onFinish, score, setScore, onHome }) {
     setSelectedAnswer(null);
   }
 
+  function getAnswerStyle(textAnswer) {
+    if (selectedAnswer === null || selectedAnswer === currentQuestion.correct)
+      return "";
+    if (textAnswer === currentQuestion.correct)
+      return "bg-mint-dark/40 text-dark rounded-xl px-2 py-1";
+    if (textAnswer === selectedAnswer)
+      return "bg-mauve/60 text-dark rounded-xl px-2 py-1";
+    return "";
+  }
+
   return (
     <>
       <button
@@ -43,16 +53,7 @@ export default function Quiz({ questions, onFinish, score, setScore, onHome }) {
           {currentQuestion.answers.map((textAnswer, index) => (
             <div
               key={index}
-              className={`flex items-center gap-2 w-fit cursor-pointer ${
-                selectedAnswer === currentQuestion.correct
-                  ? ""
-                  : textAnswer === currentQuestion.correct &&
-                      selectedAnswer !== null
-                    ? "bg-mint-dark/40 text-dark rounded-xl px-2 py-1"
-                    : textAnswer === selectedAnswer
-                      ? "bg-mauve/60 text-dark rounded-xl px-2 py-1"
-                      : ""
-              }`}
+              className={`flex items-center gap-2 w-fit cursor-pointer ${getAnswerStyle(textAnswer)}`}
             >
               <input
                 type="radio"
