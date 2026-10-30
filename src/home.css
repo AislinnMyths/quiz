@@ -15,28 +15,28 @@
   transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2);
 }
 .c1 {
-  background: linear-gradient(135deg, #553555, #755b69);
+  background: linear-gradient(135deg, #553555, #755b69, #553555);
   transform: rotate(-6deg);
   z-index: 1;
 }
 
 .c2 {
-  background: linear-gradient(135deg, #755b69, #96c5b0);
+  background: linear-gradient(135deg, #553555, #755b69, #553555);
   transform: rotate(0 deg);
   z-index: 2;
 }
 .c3 {
-  background: linear-gradient(135deg, #96c5b0, #adf1d2);
+  background: linear-gradient(135deg, #553555, #755b69, #553555);
   transform: rotate(6deg);
   z-index: 3;
 }
 
 .stack:hover .c1 {
-  transform: translate(-90px, -30px) rotate(-18deg);
+  transform: translate(-140px, -30px) rotate(-22deg);
 }
 .stack:hover .c2 {
   transform: translate(0px, -55px) rotate(0deg);
 }
 .stack:hover .c3 {
-  transform: translate(90px, -30px) rotate(18deg);
+  transform: translate(140px, -30px) rotate(22deg);
 }
