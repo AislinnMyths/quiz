@@ -8,6 +8,7 @@ export default function Quiz({ questions, onFinish, score, setScore, onHome }) {
 
   const currentQuestion = questions[questionIndex];
 
+  // in last question, there is no next index, so go to results.
   function handleNext() {
     if (selectedAnswer === currentQuestion.correct) {
       setScore(score + 1);
@@ -19,7 +20,7 @@ export default function Quiz({ questions, onFinish, score, setScore, onHome }) {
     }
     setSelectedAnswer(null);
   }
-
+  // order matters, each "if" assumes the previous ones were false.
   function getAnswerStyle(textAnswer) {
     if (selectedAnswer === null || selectedAnswer === currentQuestion.correct)
       return "";
@@ -53,6 +54,8 @@ export default function Quiz({ questions, onFinish, score, setScore, onHome }) {
               key={index}
               className={`flex items-center gap-2 w-fit cursor-pointer ${getAnswerStyle(textAnswer)}`}
             >
+              /* radios kept on purpose. Arrow keys select an option, so
+              keyboard users can answer by accident. */
               <input
                 type="radio"
                 className="appearance-none w-4 h-4 rounded-full border-2 border-mint checked:bg-mint cursor-pointer"

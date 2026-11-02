@@ -1,3 +1,4 @@
+//  Defaults to "" so it never render as "undefined".
 export default function Button({ onClick, children, className = "" }) {
   return (
     <button

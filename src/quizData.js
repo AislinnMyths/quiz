@@ -1,3 +1,4 @@
+// "correct" must match one of "answers" eexactly, because answers are compared as text.
 export const categories = [
   {
     id: "scifiQA",

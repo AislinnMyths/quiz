@@ -31,6 +31,7 @@
   z-index: 3;
 }
 
+/* on hovere, the cards fan out: the eside cards move away and tilt, the middle only lifts*/
 .stack:hover .c1 {
   transform: translate(-140px, -30px) rotate(-22deg);
 }
