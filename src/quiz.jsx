@@ -54,10 +54,10 @@ export default function Quiz({ questions, onFinish, score, setScore, onHome }) {
               key={index}
               className={`flex items-center gap-2 w-fit cursor-pointer ${getAnswerStyle(textAnswer)}`}
             >
-              /* radios kept on purpose. Arrow keys select an option, so
-              keyboard users can answer by accident. */
               <input
                 type="radio"
+                /* radios kept on purpose. Arrow keys select an option, so
+              keyboard users can answer by accident. */
                 className="appearance-none w-4 h-4 rounded-full border-2 border-mint checked:bg-mint cursor-pointer"
                 id={index}
                 name="radioGroup"
